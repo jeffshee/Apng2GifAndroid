@@ -1,4 +1,4 @@
-# APNG2GIF Android
+# Apng2Gif Android
 [ ![JCenter](https://api.bintray.com/packages/jeffshee/maven/io.github.jeffshee.apng2gif/images/download.svg?version=1.0) ](https://bintray.com/jeffshee/maven/io.github.jeffshee.apng2gif/1.0/link)  
 A tiny lib to provide simple apng2gif functionality to Android platform
 
