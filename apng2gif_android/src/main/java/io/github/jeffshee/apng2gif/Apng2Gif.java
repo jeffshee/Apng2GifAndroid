@@ -144,17 +144,17 @@ public class Apng2Gif {
                         int tempOffsetX = tempPngChunk.getxOff();
                         int tempOffsetY = tempPngChunk.getyOff();
 
-                        frameBitmap = getFrameBitmap(frameIndex);
+                        frameBitmap = getFrameBitmap(i);
 
                         if (tempDisposeOp != PngChunkFCTL.APNG_DISPOSE_OP_PREVIOUS) {
 
                             if (tempDisposeOp == PngChunkFCTL.APNG_DISPOSE_OP_NONE) {
-                                bitmap = frameBitmap;
+                                bitmap = bitmapArray[i];
 
                             } else if (tempDisposeOp == PngChunkFCTL.APNG_DISPOSE_OP_BACKGROUND) {
                                 tempBitmap = Bitmap.createBitmap(baseWidth, baseHeight, Bitmap.Config.ARGB_8888);
                                 tempCanvas = new Canvas(tempBitmap);
-                                tempCanvas.drawBitmap(frameBitmap, 0, 0, null);
+                                tempCanvas.drawBitmap(bitmapArray[i], 0, 0, null);
 
                                 tempCanvas.clipRect(tempOffsetX, tempOffsetY, tempOffsetX + frameBitmap.getWidth(), tempOffsetY + frameBitmap.getHeight());
                                 tempCanvas.drawColor(Color.TRANSPARENT, PorterDuff.Mode.CLEAR);
